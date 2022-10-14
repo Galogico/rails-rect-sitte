@@ -15,6 +15,7 @@ class Api::ComidasController < ApplicationController
       render json: @comida
     else
       render json: {errors: @comida.errors},status: :unprocessable_entity
+    end
   end
 
   def update
@@ -25,8 +26,8 @@ class Api::ComidasController < ApplicationController
 
 
   private
-  def comida_params 
-    #{comida: {type: "Açai, qtd: 777"}}
-    params.require(:comida).permit(:type,:qtd)
-  end
+    def comida_params 
+      #{comida: {type: "Açai, qtd: 777"}}
+      params.require(:comida).permit(:type,:qtd)
+    end
 end

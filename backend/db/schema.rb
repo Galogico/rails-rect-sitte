@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_07_175242) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_14_180330) do
   create_table "comidas", force: :cascade do |t|
-    t.string "type"
+    t.string "typeC"
     t.float "qtd"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "img_url"
   end
 
   create_table "pedidos", force: :cascade do |t|
