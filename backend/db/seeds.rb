@@ -4,7 +4,7 @@ Comida.delete_all
     Comida.create(
         typeC: Faker::Food.fruits,
         qtd: Faker::Number.between(from: 1, to: 100),
-        img_url: "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/77399d7f5d5451c4e8b87ea038a96bee~c5_720x720.jpeg?x-expires=1665903600&x-signature=Milpj3gdEndNwUHhRt9VpPmeriE%3D"
+        img_url: "https://yt3.ggpht.com/purMyuBdyrlu6_bmHk7NtedF1_mhI8hQ_XjqXy2ctAf7Kgl8ZdpLDNcWL-LQUrCLKewkoAu4Nw=s900-c-k-c0x00ffffff-no-rj"
     )
 end
 

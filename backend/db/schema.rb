@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_10_14_180330) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comidas", force: :cascade do |t|
     t.string "typeC"
     t.float "qtd"
@@ -22,7 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_14_180330) do
   create_table "pedidos", force: :cascade do |t|
     t.text "descrição"
     t.float "price"
-    t.integer "comida_id", null: false
+    t.bigint "comida_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["comida_id"], name: "index_pedidos_on_comida_id"

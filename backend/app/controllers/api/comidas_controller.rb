@@ -1,11 +1,13 @@
 class Api::ComidasController < ApplicationController
+  before_action :set_comida,only: [:update,:show,:destroy]
+
   def index
     @comida = Comida.all
     render json: @comida
   end
 
   def show
-    @comida = Cmida.find(params[:id])
+
     render json: @comida
   end
 
@@ -19,9 +21,19 @@ class Api::ComidasController < ApplicationController
   end
 
   def update
+
+    if @comida.update(comida_params)
+      render json: @Comida
+    else
+      render json: {errors: @comida.errors},status: :unprocessable_entity
+    end
   end
 
   def destroy
+
+    @comida.destroy
+    render json: {message: "Comida destruida com sucesso"}
+
   end
 
 
@@ -29,5 +41,10 @@ class Api::ComidasController < ApplicationController
     def comida_params 
       #{comida: {type: "Açai, qtd: 777"}}
       params.require(:comida).permit(:type,:qtd)
+    end
+
+
+    def set_comida
+      @comida = Comida.find(params[:id])
     end
 end
