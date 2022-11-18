@@ -40,7 +40,7 @@ class Api::ComidasController < ApplicationController
   private
     def comida_params 
       #{comida: {type: "Açai, qtd: 777"}}
-      params.require(:comida).permit(:type,:qtd)
+      params.require(:comida).permit(:typeC,:qtd,:img_url)
     end
 
 
